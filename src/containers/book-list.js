@@ -11,7 +11,6 @@ class BookList extends Component{
     }
 
     render(){
-        console.log(this.props.asdf) //--> vai retornar 123
         return(
             <ul className="list-group col-sm-4">
                 {this.renderList()}
@@ -27,7 +26,7 @@ function mapStateToProps(state) {
 //dentro do componente BookList
     return {
         //Qualquer coisa que retornar aqui vai ser uma prop aqui dentro dessa classe this.props.books
-        asdf : '123'
+        books: state.books //Vem do reducer.
     }
 }
-
+export default connect(mapStateToProps)(BookList);
